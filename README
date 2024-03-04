@@ -102,26 +102,24 @@ applications.
 SOFTWARE                                      ENVIRONMENT VARIABLE
 ---------------------------------------------------------------------
 
-Java SDK 1.6 or greater (* 1)                 JAVA_HOME
-    (for Java 1.7 see note at (* 2))
+Java SDK 1.8 or greater (* 1)                 JAVA_HOME
 
-Ant 1.7.1 or greater (* 1)                    ANT_HOME
-    (for Java 1.7 see note at (* 2))
+Ant 1.8 or greater (* 1)                      ANT_HOME
 
-Adobe AIR Integration Kit (* 3)               AIR_HOME
+Adobe AIR Integration Kit (* 2)               AIR_HOME
 
-Adobe Flash Player Content Debugger (* 4)     FLASHPLAYER_DEBUGGER
+Adobe Flash Player Content Debugger (* 3)     FLASHPLAYER_DEBUGGER
 
-Adobe Flash Player playerglobal swcs (* 5)    PLAYERGLOBAL_HOME
+Adobe Flash Player playerglobal swcs (* 4)    PLAYERGLOBAL_HOME
 
-Optional: Text Layout Framework (* 6)         TLF_HOME
+Optional: Text Layout Framework (* 5)         TLF_HOME
 
-Optional: Adobe Extension Manager CS5 (* 7)   ADOBE_EXTENSION_MANAGER
+Optional: Adobe Extension Manager CS5 (* 6)   ADOBE_EXTENSION_MANAGER
 
-Optional: Flex Messaging Common (* 8)         BLAZEDS_HOME
+Optional: Flex Messaging Common (* 7)         BLAZEDS_HOME
 
 Java Cryptography Extensions
-    (see note (*9))
+    (see note (*8))
 
 ---------------------------------------------------------------------
 
@@ -139,23 +137,15 @@ On the Mac (bash), set PATH to
 On Linux make sure your path includes ANT_HOME and JAVA_HOME.
 
 * 2)
-If you are using Java SDK 1.7 or greater on a Mac you must use Ant 1.8 or
-greater. If you use Java 1.7 with Ant 1.7, ant reports the java version as
-1.6 so the JVM args for the data model (-d32/-d64) will not be set correctly
-and you will get compile errors.
-
-* 3)
 The Adobe AIR integration kit for Windows can be downloaded from:
 
-   http://airdownload.adobe.com/air/win/download/20.0/AdobeAIRSDK.zip
+    https://airdownload.adobe.com/air/win/download/32.0/AdobeAIRSDK.zip
 
 The Adobe AIR integration kit for Mac can be downloaded from:
 
-    http://airdownload.adobe.com/air/mac/download/20.0/AdobeAIRSDK.tbz2
+    https://airdownload.adobe.com/air/mac/download/32.0/AdobeAIRSDK.dmg
 
-The Adobe AIR integration kit for Linux can be downloaded from:
-
-    http://airdownload.adobe.com/air/lin/download/2.6/AdobeAIRSDK.tbz2
+The Adobe AIR integration kit for Linux is no longer available from Adobe.
 
 Download the AIR SDK for your platform and unzip it. Set AIR_HOME to the
 absolute path of the AIR SDK directory.
@@ -164,10 +154,14 @@ This version of the Apache Flex SDK was certified for use with Adobe AIR 16
 and is compatible with version 3.1 and up. It has been fully tested on AIR 3.7,
 4 and 16.
 
-* 4)
+* 3)
 The Adobe Flash Player content debuggers can be found here:
 
-    http://www.adobe.com/support/flashplayer/downloads.html
+    - Windows: https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flashplayer_32_sa_debug.exe
+
+    - Mac: https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flashplayer_32_sa_debug.dmg
+
+    - Linux: https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flash_player_sa_linux_debug.x86_64.tar.gz
 
 This version of the Apache Flex SDK was certified for use with Adobe Flash
 Player 11.1, and is compatible with version 10.2 and up. It has been tested
@@ -184,10 +178,10 @@ On the Mac, set FLASHPLAYER_DEBUGGER to the absolute path of
 
 On Linux, set FLASHPLAYER_DEBUGGER to the absolute path of flashplayerdebugger.
 
-* 5)
-The Adobe Flash Player playerglobal.swc for 11.1 can be downloaded from:
+* 4)
+The Adobe Flash Player playerglobal.swc for 32.0 can be downloaded from:
 
-    http://download.macromedia.com/get/flashplayer/updaters/11/playerglobal11_1.swc
+    https://fpdownload.macromedia.com/get/flashplayer/updaters/32/playerglobal32_0.swc
 
 Set PLAYERGLOBAL_HOME to the absolute path of the player directory (not
 including the version subdirectory). The target-player option controls which
@@ -197,7 +191,7 @@ Additional information about downloading and setting up this and/or other
 versions of the Adobe Flash Player can be found in the section
 'Adobe Flash Player Version Support' below.
 
-* 6)
+* 5)
 The build scripts assume that the root folder containing the source code for
 Apache Flex Text Layout Framework ('flex-tlf') is at the same level as the SDK
 root folder ('flex-sdk'). See 'Getting the source code', below. If this is not
@@ -206,7 +200,7 @@ point to your TLF root folder. If you are using a released artifact, the
 source should be included in the artifact, so setting TLF_HOME is not
 required.
 
-* 7)
+* 6)
 The Adobe Extension Manager is only required for those creating releases or
 testing changes to the flash-integration SWC. Note that if you change APIs on
 classes that flash-integration depends on, you may need to update
@@ -232,7 +226,7 @@ and set ADOBE_EXTENSION_MANAGER to the absolute path of
 
 On Linux, no Adobe Extension Manager exists.
 
-* 8)
+* 7)
 The build scripts assume that the root folder containing the source code for Apache
 Flex BlazeDS ('flex-blazeds') is at the same level as the SDK root folder
 ('flex-sdk'). See 'Getting the source code', below. If this is not
@@ -241,7 +235,7 @@ to point to your BLAZEDS root folder. If you are using a released artifact, the
 source should be included in the artifact, so setting BLAZEDS_HOME is not
 required.
 
-* 9)
+* 8)
 The Java Cryptography Extensions (JCE) Unlimited Strength jars are needed in
 order to download 3rd party software. Download and install this from Oracle
 which version you need will depend on your Java version and OS.
@@ -337,13 +331,13 @@ To create an SDK for Flash Builder or any other IDE, run:
 If you want to set the Flash Player and AIR versions to something other
 than their defaults, pass the versions to the ant script like so:
 
-     ant -f installer.xml -Dflash.sdk.version=16.0 -Dair.sdk.version=16.0
+     ant -f installer.xml -Dflash.sdk.version=32.0 -Dair.sdk.version=32.0
 
 On Mac/Linux the AIR and Flash Player version can be changed, after the SDK
 has been compiled, by running:
 
-    ./ide/setFlashPlayerVersion.sh ./ 20.0
-    ./ide/addAIRtoSDK.sh 20.0 ./
+    ./ide/setFlashPlayerVersion.sh ./ 32.0
+    ./ide/addAIRtoSDK.sh 32.0 ./
 
 
 
@@ -425,9 +419,9 @@ OR
 Change the playerglobal.version in the build.properties file to have a value
 other than '11.1'. For this change to take effect, the SDK needs to be
 recompiled. For example, to compile against the latest version of the Adobe
-Flash Player, set the value of playerglobal.version to be '20.0' like so:
+Flash Player, set the value of playerglobal.version to be '32.0' like so:
 
-    playerglobal.version = 20.0
+    playerglobal.version = 32.0
 
 OR
 
@@ -435,18 +429,12 @@ Compile the SDK with a -Dplayerglobal.version=<version> option, where <version>
 is the Adobe Flash Player version to compile the SDK against.
 
 Different versions of the Adobe Flash Player require different versions of
-playerglobal.swc.
+playerglobal.swc. However, Adobe has stopped providing all older versions of
+playerglobal.swc, and only version 32.0 is available now.
 
-These can be found at:
+It can be found at:
 
-    http://download.macromedia.com/get/flashplayer/installers/archive/playerglobal/playerglobal10_2.swc
-    http://download.macromedia.com/get/flashplayer/installers/archive/playerglobal/playerglobal10_3.swc
-
-and
-
-    http://download.macromedia.com/get/flashplayer/updaters/<version.major>/playerglobal<version.major>_<version.minor>.swc
-
-(e.g. http://download.macromedia.com/get/flashplayer/updaters/11/playerglobal11_1.swc)
+    https://fpdownload.macromedia.com/get/flashplayer/updaters/32/playerglobal32_0.swc
 
 Copy the target playerglobal.swc to the directory:
 
