@@ -41,7 +41,7 @@
 
     <property name="debug" value="true"/>
     <property name="strict" value="true"/>
-    <property name="javac.src" value="1.5"/>
+    <property name="javac.src" value="1.8"/>
     
     <property name="kit.prefix" value="apache-flex-sdk-${release.version}"/>
     <property name="kit-pixelbender.prefix" value="apache-flex-sdk-pixel-bender-1.0.0"/>
