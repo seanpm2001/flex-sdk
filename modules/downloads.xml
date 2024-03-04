@@ -576,7 +576,7 @@
         description="Downloads and copies xercesImpl.jar and xml-api.jars to the lib directory.">
           
         <antcall target="download-zip">
-          <param name="srcUrl" value="http://archive.apache.org/dist/xerces/j"/>
+          <param name="srcUrl" value="http://archive.apache.org/dist/xerces/j/binaries"/>
           <param name="zipFile" value="Xerces-J-bin.2.9.1.zip"/>
           <param name="srcJarPath" value="${xerces.dir}/xercesImpl.jar"/>
           <param name="destJarFile" value="${lib.ext.dir}/xercesImpl.jar"/>

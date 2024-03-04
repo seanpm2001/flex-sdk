@@ -466,7 +466,7 @@ download. Most of the jars are installed in lib/external.
     javacc - http://java.net/projects/javacc/downloads/download/javacc-5.0.tar.gz
     velocity - http://archive.apache.org/dist/velocity/engine/1.4/velocity-1.4.tar.gz
     xalan - http://archive.apache.org/dist/xml/xalan-j/binaries/xalan-j_2_6_0-bin.tar.gz
-    xerces - http://archive.apache.org/dist/xerces/j/Xerces-J-bin.2.9.1.zip
+    xerces - http://archive.apache.org/dist/xerces/j/binaries/Xerces-J-bin.2.9.1.zip
 
 The following dependencies have licenses which Apache considers to be
 reciprocal licenses. These files are installed in lib/external
